@@ -4,7 +4,7 @@ import logger from 'jet-logger';
 import morgan from 'morgan';
 import cors from "cors";
 
-import EnvVars, { frontVars, NodeEnvs } from './common/constants/env';
+import EnvVars, { NodeEnvs } from './common/constants/env';
 import { RouteError } from './common/utils/route-errors';
 import apiRouter from './routes/apiRouter';
 

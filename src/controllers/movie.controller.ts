@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { MovieService } from "../services/movie.service";
+import { createMovieSchema, updateMovieSchema } from "../schemas/movie/movie.schema";
 
 export class MovieController {
 
@@ -18,13 +19,15 @@ export class MovieController {
     }
 
     create = async (req: Request, res: Response) => {
-        const movie = await this.service.create(req.body)
+        const data = createMovieSchema.parse(req.body)
+        const movie = await this.service.create(data)
 
         return res.json(movie)
     }
 
     update = async (req: Request, res: Response) => {
-        const movie = await this.service.update(req.params.id.toString(), req.body)
+        const data = updateMovieSchema.parse(req.body)
+        const movie = await this.service.update(req.params.id.toString(), data)
 
         return res.json(movie)
     }

@@ -5,7 +5,6 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { nullable } from 'zod';
 
 @Entity('movies')
 export class Movie {

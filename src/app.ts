@@ -28,4 +28,6 @@ async function startServer() {
 }
 
 // Start the server
-startServer()
+startServer().catch(error => {
+  console.error(error)
+})
