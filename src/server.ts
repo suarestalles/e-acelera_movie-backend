@@ -16,7 +16,7 @@ const app = express();
 
 // CORS
 app.use(cors({
-  origin: process.env.FRONT_URL?.split(",") ?? [
+  origin: process.env.FRONT_ENV?.split(",") ?? [
       "http://localhost:3000",
     ],
 }))
@@ -40,6 +40,7 @@ if (EnvVars.NodeEnv === NodeEnvs.PRODUCTION) {
 
 // Add error handler
 app.use((err: Error, _: Request, res: Response, next: NextFunction) => {
+  console.log(`FRONT URL>>>>>>>>>>>>>>>>>>>>>>>>>>>>${process.env.FRONT_ENV}`)
   if (EnvVars.NodeEnv !== NodeEnvs.TEST.valueOf()) {
     logger.err(err, true);
   }
