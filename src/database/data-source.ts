@@ -10,7 +10,9 @@ export const AppDataSource = new DataSource({
     username: DbVars.DB_USERNAME,
     password: DbVars.DB_PASSWORD,
     database: DbVars.DB_DATABASE,
-    ssl: DbVars.PGSSLMODE === 'no-verify' ? false : true,
+    ssl: {
+        rejectUnauthorized: false
+    },
     synchronize: false,
     logging: true,
     entities: [Movie],
