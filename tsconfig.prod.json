@@ -16,7 +16,9 @@
     },
     "useUnknownInCatchVariables": false,
     "sourceMap": false,
-    "removeComments": true
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["src/**/*.ts"],
   "exclude": [
