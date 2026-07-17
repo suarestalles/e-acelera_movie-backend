@@ -8,7 +8,7 @@
     "dev": "npm run dev:watch",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "start": "node -r dotenv/config -r module-alias/register ./dist/main.js",
+    "start": "node -r dotenv/config -r module-alias/register ./dist/app.js",
     "test": "cross-env NODE_ENV=test vitest",
     "type-check": "tsc -b --noEmit",
     "typeorm": "typeorm-ts-node-commonjs"
