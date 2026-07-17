@@ -11,7 +11,11 @@
     "start": "node -r dotenv/config -r module-alias/register ./dist/app.js",
     "test": "cross-env NODE_ENV=test vitest",
     "type-check": "tsc -b --noEmit",
-    "typeorm": "typeorm-ts-node-commonjs"
+    "typeorm": "typeorm-ts-node-commonjs",
+
+    "migration:run": "typeorm-ts-node-commonjs migration:run -d src/database/data-source.ts",
+    "migration:generate": "typeorm-ts-node-commonjs migration:generate src/database/migrations/AutoMigration -d src/database/data-source.ts",
+    "migration:create": "typeorm-ts-node-commonjs migration:create src/database/migrations/NewMigration"
   },
   "engines": {
     "node": ">=16.0.0"
