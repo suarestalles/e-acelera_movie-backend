@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": ["ES2020"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {},
+    "useUnknownInCatchVariables": false,
+    "types": [
+      "node",
+      "vitest/globals",
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register", "dotenv/config"],
+  },
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*.ts",
+    "scripts",
+    "eslint.config.ts",
+    "vitest.config.mts"
+  ],
+  "exclude": ["src/public/*"]
+}
