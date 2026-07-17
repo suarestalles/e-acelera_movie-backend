@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "0.0.0",
   "scripts": {
-    "build": "shx rm -rf dist && npm run lint && tsc --project tsconfig.prod.json",
+    "build": "rm -rf dist && npm run lint && tsc --project tsconfig.prod.json",
     "dev:basic": "ts-node ./src/app",
     "dev:watch": "nodemon --exec \"npm run dev:basic\" --watch ./src --ext .ts",
     "dev": "npm run dev:watch",
